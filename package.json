@@ -1,0 +1,38 @@
+{
+  "name": "pluto",
+  "version": "0.1.0",
+  "description": "An agentic AI terminal for Linux that simplifies command line tasks with automated audit logging.",
+  "author": {
+    "name": "Pluto Team",
+    "email": "pluto@example.com"
+  },
+  "homepage": "https://github.com/pluto-terminal/pluto",
+  "main": "main.js",
+  "scripts": {
+    "rebuild": "electron-rebuild -f -w node-pty",
+    "start": "electron . --no-sandbox",
+    "dist": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.pluto.terminal",
+    "productName": "Pluto",
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "icon": "icon.png",
+      "category": "TerminalEmulator"
+    }
+  },
+  "dependencies": {
+    "@google/genai": "^2.15.0",
+    "node-pty": "^1.1.0",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.0",
+    "electron": "^32.0.0",
+    "electron-builder": "^26.15.3"
+  }
+}
